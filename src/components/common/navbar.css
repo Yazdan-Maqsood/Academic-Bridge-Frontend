@@ -1,0 +1,227 @@
+/* Navbar Styling */
+
+.custom-navbar {
+  animation: slideUp 0.4s ease-out;
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.custom-navbar {
+  background-color: var(--bg-sidebar);
+  padding: 20px 30px;
+}
+
+.custom-navbar .navbar-brand {
+  color: var(--text-light);
+  font-weight: 600;
+  font-size: 20px;
+}
+
+.custom-navbar .nav-link {
+  color: var(--text-light);
+  margin-left: 15px;
+  transition: 0.2s ease-in-out;
+  position: relative;
+  padding: 8px 12px;
+  border-radius: 8px;
+}
+
+.custom-navbar .nav-link:hover {
+  color: var(--primary);
+  background-color: rgba(68, 157, 209, 0.1);
+}
+
+/* Active link styling */
+.custom-navbar .nav-link.active {
+  color: var(--primary);
+  background-color: rgba(68, 157, 209, 0.15);
+  font-weight: 600;
+}
+
+/* Active link with underline effect (alternative) */
+.custom-navbar .nav-link.active-underline {
+  color: var(--primary);
+  font-weight: 600;
+}
+
+.custom-navbar .nav-link.active-underline::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 30px;
+  height: 2px;
+  background-color: var(--primary);
+  border-radius: 2px;
+}
+
+/* Active link with left border (alternative) */
+.custom-navbar .nav-link.active-border {
+  color: var(--primary);
+  font-weight: 600;
+  border-left: 3px solid var(--primary);
+  background-color: rgba(68, 157, 209, 0.08);
+}
+
+/* Button styles */
+.nav-btn {
+  background-color: var(--primary);
+  border: none;
+  color: white;
+  padding: 6px 14px;
+  border-radius: 6px;
+  margin-left: 15px;
+}
+
+.nav-btn:hover {
+  background-color: #2E7FB8;
+}
+
+.logout-btn {
+  background-color: var(--danger);
+  border: none;
+  color: white;
+  padding: 6px 14px;
+  border-radius: 6px;
+  margin-left: 15px;
+}
+
+.registration-btn {
+  background-color: #08bc65;
+  border: none;
+  color: white;
+  padding: 6px 14px;
+  border-radius: 6px;
+  margin-left: 15px;
+}
+
+/* Notification Bell */
+.notification {
+  position: relative;
+  margin-left: 20px;
+  cursor: pointer;
+}
+
+.notification-badge {
+  position: absolute;
+  top: -5px;
+  right: -8px;
+  background-color: var(--danger);
+  color: white;
+  font-size: 10px;
+  padding: 3px 6px;
+  border-radius: 50%;
+}
+
+/* Auth Buttons Container */
+.auth-buttons {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+/* Shared Button Styles */
+.registration-btn,
+.login-btn,
+.logout-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  color: white;
+  padding: 8px 18px;
+  border-radius: 8px;
+  font-weight: 600;
+  margin: 0 !important;
+  line-height: 1.5;
+  transition: all 0.3s ease;
+}
+
+/* Individual Button Colors */
+.registration-btn {
+  background-color: #08bc65;
+}
+
+.registration-btn:hover {
+  background-color: #01904b;
+  transform: translateY(-2px);
+}
+
+.login-btn {
+  background-color: var(--primary);
+}
+
+.login-btn:hover {
+  background-color: #2e7fb8;
+  transform: translateY(-2px);
+}
+
+.logout-btn {
+  background-color: var(--danger);
+}
+
+.logout-btn:hover {
+  background-color: #c82333;
+  transform: translateY(-2px);
+}
+
+/* Mobile Responsive */
+@media (max-width: 991px) {
+  .custom-navbar {
+    padding: 15px;
+  }
+
+  .custom-navbar .navbar-collapse {
+    margin-top: 15px;
+    background: var(--bg-sidebar);
+    padding: 15px;
+    border-radius: 10px;
+  }
+
+  .custom-navbar .navbar-nav {
+    align-items: flex-start !important;
+    gap: 10px;
+  }
+
+  .custom-navbar .nav-link {
+    margin-left: 0;
+    padding-left: 0;
+    width: 100%;
+  }
+
+  .custom-navbar .nav-link.active-border {
+    border-left: 3px solid var(--primary);
+    padding-left: 12px;
+  }
+
+  .logout-btn,
+  .registration-btn,
+  .nav-btn {
+    margin-left: 0;
+    width: 100%;
+  }
+
+  .notification {
+    margin-left: 0;
+  }
+}
+
+.navbar-toggler {
+  border-color: rgba(255, 255, 255, 0.3);
+}
+
+.navbar-toggler-icon {
+  filter: invert(1);
+}
